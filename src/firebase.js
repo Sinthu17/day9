@@ -30,6 +30,30 @@
 
 
 
+// import { initializeApp } from "firebase/app";
+// import { getFirestore } from "firebase/firestore";
+// // import { getAnalytics } from "firebase/analytics";
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAckngxHwZncRV6Q6yV0ydBc1G4QHlPi8k",
+//   authDomain: "react-task-7abe3.firebaseapp.com",
+//   projectId: "react-task-7abe3",
+//   storageBucket: "react-task-7abe3.appspot.com",
+//   messagingSenderId: "244067939850",
+//   appId: "1:244067939850:web:3f77e84f6549f100b891f3",
+//   measurementId: "G-GTKVBJWSDH"
+// };
+
+// const app = initializeApp(firebaseConfig);
+// // const analytics = getAnalytics(app);
+// export const db = getFirestore(app); // 🔹 Export Firestore
+// export default app;
+
+// console.log("✅ Firebase Connected:", app);
+
+
+
+// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // import { getAnalytics } from "firebase/analytics";
@@ -46,10 +70,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-export const db = getFirestore(app); // 🔹 Export Firestore
+
+// 🔹 Export Firestore
+export const db = getFirestore(app);
 export default app;
 
 console.log("✅ Firebase Connected:", app);
-
-
-

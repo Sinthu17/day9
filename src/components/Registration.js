@@ -1,31 +1,49 @@
 import React, { useState } from "react";
-// import { db } from "../firebase"; // import Firestore
-// import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase"; // 🔹 db must come from firebase.js
+import { db } from "../firebase"; 
 import { collection, addDoc } from "firebase/firestore";
-
 
 function Registration() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // ✅ Validation
+    if (name.length < 3) {
+      alert("Name must be at least 3 characters");
+      return;
+    }
+    if (!email.includes("@")) {
+      alert("Invalid email format");
+      return;
+    }
+    if (phone.length !== 10 || isNaN(phone)) {
+      alert("Phone must be exactly 10 digits");
+      return;
+    }
+
+    setLoading(true);
     try {
-      // Add data to Firestore "users" collection
       await addDoc(collection(db, "users"), {
-        name: name,
-        email: email,
-        createdAt: new Date()
+        name,
+        email,
+        phone,
+        createdAt: new Date(),
       });
 
-      alert(`Registered: ${name}, ${email}`);
-      setName(""); // clear input
+      setSuccess(true);
+      setName("");
       setEmail("");
+      setPhone("");
     } catch (err) {
-      console.error(err);
-      alert("Error saving to Firebase");
+      console.error("❌ Firebase Error:", err);
+      alert("Error saving to Firebase. Check console.");
     }
+    setLoading(false);
   };
 
   return (
@@ -56,13 +74,30 @@ function Registration() {
           />
         </div>
 
-        <button type="submit" className="btn btn-success w-100">
-          Submit
+        <div className="mb-3">
+          <label className="form-label">Phone</label>
+          <input
+            type="text"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="form-control"
+            placeholder="Enter 10-digit phone"
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn btn-success w-100" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
+
+      {success && (
+        <div className="alert alert-success mt-3" role="alert">
+          ✅ Registration successful!
+        </div>
+      )}
     </div>
   );
 }
 
 export default Registration;
-
