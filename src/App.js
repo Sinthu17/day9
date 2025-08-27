@@ -29,6 +29,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Registration from "./components/Registration";
 import About from "./components/About";
+import UserList from "./components/UserList";
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
                 <Link className="nav-link" to="/registration">Registration</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/users">User List</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/about">About</Link>
               </li>
             </ul>
@@ -57,6 +61,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/users" element={<UserList />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

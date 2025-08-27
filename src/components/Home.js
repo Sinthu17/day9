@@ -7,7 +7,7 @@ function Home() {
       <h1>Welcome to {`Mobile App Development `}</h1>
       <p>Manage your data efficiently using our mobile app.</p>
       <Link to="/registration" className="btn btn-primary me-2">Register</Link>
-      <Link to="/about" className="btn btn-outline-secondary">About</Link>
+      
     </div>
   );
 }
