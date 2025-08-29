@@ -1,0 +1,68 @@
+/* Background */
+.userlist-container {
+  background-color: #0C0420;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Title */
+.title {
+  color: #D391B0;
+  font-weight: bold;
+}
+
+/* Inputs */
+.custom-input {
+  border: 1px solid #78466A;
+  background-color: #5D3C64;
+  color: #fff;
+}
+
+.custom-input:focus {
+  border-color: #D391B0;
+  box-shadow: 0 0 5px #D391B0;
+}
+
+/* Buttons */
+.custom-btn {
+  background-color: #78466A !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.custom-btn:hover {
+  background-color: #9F6496 !important;
+}
+
+/* Table */
+.custom-table thead {
+  background-color: #5D3C64;
+  color: #fff;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #2a2238;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #9F6496;
+  color: #fff;
+}
+
+/* Cards */
+.custom-card {
+  background-color: #5D3C64;
+  color: #fff;
+  border: 2px solid #78466A;
+}
+
+.custom-card .card-title {
+  color: #D391B0;
+}
+
+/* Modal Header */
+.modal-header-custom {
+  background-color: #BA6E8F;
+  color: #fff;
+}

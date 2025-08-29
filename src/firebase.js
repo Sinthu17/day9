@@ -56,8 +56,8 @@
 // src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// import { getAnalytics } from "firebase/analytics";
 
+// 🔹 Your Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAckngxHwZncRV6Q6yV0ydBc1G4QHlPi8k",
   authDomain: "react-task-7abe3.firebaseapp.com",
@@ -68,11 +68,11 @@ const firebaseConfig = {
   measurementId: "G-GTKVBJWSDH"
 };
 
+// 🔹 Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
-// 🔹 Export Firestore
+// 🔹 Initialize Firestore
 export const db = getFirestore(app);
-export default app;
 
+export default app;
 console.log("✅ Firebase Connected:", app);

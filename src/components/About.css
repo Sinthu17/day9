@@ -1,0 +1,54 @@
+/* ========================
+   About page wrapper
+======================== */
+.about-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0C0420, #5D3C64);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Glassmorphic card for About */
+.about-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  padding: 50px 60px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: #fff;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: floatCard 4s ease-in-out infinite alternate, fadeInCard 1s ease forwards;
+}
+
+/* Floating animation for card */
+@keyframes floatCard {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Fade-in animation */
+@keyframes fadeInCard {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Card text */
+.about-card h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #D391B0; /* premium highlight color */
+  font-weight: bold;
+}
+
+.about-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffffffcc; /* subtle white for readability */
+}
